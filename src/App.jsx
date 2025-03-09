@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BookCard from './components/bookcard';
 
 function App() {
   const books = [
@@ -34,7 +35,15 @@ function App() {
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
+  return (<>
+  <div className='flex justify-between'>
+    {books.map((item)=>(
+      <BookCard key={item.id} name={item.name} image={item.image} genre={item.genre} author={item.author} >
+
+      </BookCard>
+    ))}
+  </div>
+  </>);
 }
 
 export default App;
